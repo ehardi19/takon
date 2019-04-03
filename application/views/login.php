@@ -37,9 +37,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     body{
       background: url(https://cdn-images-1.medium.com/max/2000/1*s987K8-L-mlk0RsEMyVKJw.jpeg);
     }
-    #ngaco{
-      display: flex;
-    }
     #surel {
       background-color:#c9c9c9;
     }
@@ -69,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <small id="txt" class="form-text text-muted">Layanan dan Kebijakan Privasi Quora dan</small>
             <small id="txt" class="form-text text-muted">setuju bahwa informasi Anda bersifat akurat.</small>
           </td>
-          <!--BATAS -->
+          <!--Login form -->
           <td id="form" style="margin-right:40px; margin-bottom:30px;">
               <div class="form-group row">
                 <div class="col-xs-2">
