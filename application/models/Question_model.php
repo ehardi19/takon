@@ -20,6 +20,7 @@ class Question_model extends CI_Model {
         $this->question = $data['question'];
         $this->userId = $data['user_id'];
         $this->time = now();
+        $this->db->update('question', $this);
     }
 
     public function update($id, $data) {
