@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link rel="icon" href="https://qsf.c7.quoracdn.net/-3-images.favicon.ico-26-ae77b637b1e7ed2c.ico">
-    <title>Setelan Akun - Quora</title>
+    <title>Nama User - Quora</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -26,6 +28,12 @@
       nav #list #crih:hover{
         background-color:#f7f7f7;
       }
+      .profile_photo_img{
+        border-radius:50%;
+      }
+      #navs{
+        margin-bottom:40px;
+      }
       #dot {
       height: 30px;
       width: 30px;
@@ -41,8 +49,8 @@
     #dr:hover{
       background-color: #c9ddff;
     }
-    .set > .row{
-      justify-content:center;
+    #profile > .row{
+      margin-left:200px;
     }
 
     </style>
@@ -52,7 +60,7 @@
 
     <nav id="navs" class="navbar navbar-expand-sm navbar-light" style="padding: .1rem 1rem; border-bottom:1px solid #cccccc;">
       <div class="header_logo u-flex-none" style="margin-right:20px;">
-        <a class="navbar-brand" href="#beranda">
+        <a class="navbar-brand" href="#">
           <img src="https://2xawx0gmudy471po527lbxcd-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/quora-604x400.png" alt="logo" style="width:70px; height=70px;">
         </a>
       </div>
@@ -90,54 +98,39 @@
       </form>
     </nav>
     <!--BATAS SETELAH NAVBAR-->
-    <form class="set">
-      <div class="row" style="margin-left:115px; margin-top:40px;">
-        <div class="col-sm-8">Setelan Akun</div>
+
+    <form id="profile">
+      <div class="row">
+        <div class="col-sm-3">
+          <!--di ganti jadi foto user-->
+          <img class="profile_photo_img" src="https://qph.fs.quoracdn.net/main-thumb-760271012-200-ypqyshmmmvregybgycawmthfrkfomytl.jpeg" alt="Son Of Zeuz" height="200" width="200">
+        </div>
+        <div class="col-sm-6">
+            <h1>Nama User</h1>
+            <small class="form-text text-muted"><a href="#" style="color:grey;">Add profile credential</a></small>
+            <small class="form-text text-muted"><a href="#" style="color:grey;">Write a description about yourself</a></small>
+            <small class="form-text text-muted" style="color:grey;">Jumlah Followers</small>
+        </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-6"> <hr> </div>
+        <div class="col-sm-8">
+          <hr>
+        </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-2">Surel Utama</div>
-        <div class="col-sm-4">Example</div>
+      <div class="row" style="margin-top:-10px">
+        <div class="col-sm-7">
+          <p>Profil</p>
+        </div>
+        <div class="col-sm-3">
+          <p>Terbaru</p>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-sm-4" style="margin-left:217px"><a href="#">Tambah Alamat Surel Lain</a></div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-6"> <hr> </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-2">Nomor Telepon</div>
-        <div class="col-sm-4">Example</div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4" style="margin-left:217px"><a href="#">Tambahkan Nomor Telepon</a></div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-6"> <hr> </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-2">Sandi</div>
-        <div class="col-sm-4"><a href="#">Ubah Sandi</a></div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-6"> <hr> </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-2">Keluar</div>
-        <div class="col-sm-4">Example</div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4" style="margin-left:217px"><a href="#">Keluar dari semua peramban lain</a></div>
+      <div class="row" style="margin-top:-25px">
+        <div class="col-sm-8">
+          <hr>
+        </div>
       </div>
     </form>
 
