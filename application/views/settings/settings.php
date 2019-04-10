@@ -1,6 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -28,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       nav #list #crih:hover{
         background-color:#f7f7f7;
       }
-      #dot {
+      #dot{
       height: 30px;
       width: 30px;
       background-color: #bbb;
@@ -39,6 +37,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       background-color:#620a82;
       color:white;
       font-size: 19px;
+    }
+    #btnNew{
+      color:white;
+      padding: 3px;
+      font-size: 10px;
+    }
+    #emailNew{
+      width: 200px;
+      padding: 0px;
     }
     #dr:hover{
       background-color: #c9ddff;
@@ -106,7 +113,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-sm-4">Example</div>
       </div>
       <div class="row">
-        <div class="col-sm-4" style="margin-left:217px"><a href="#">Tambah Alamat Surel Lain</a></div>
+        <div class="col-sm-4" style="margin-left:217px">
+          <a href="#" data-toggle="collapse" data-target="#demo">Tambah Alamat Surel Lain</a>
+        </div>
+      </div>
+      <!-- collapse  -->
+      <div class="row">
+        <div class="col-sm-4" style="margin-left:217px">
+          <div id="demo" class="collapse">
+            <input id="emailNew" class="form-control" type="email" name="name" value="" placeholder="name@example.com" width="10px">
+            <input  id="btnNew" class="btn btn-primary" type="submit" name="submit" value="Tambah Surel" width="5px;">
+          </div>
+        </div>
       </div>
 
       <div class="row">
@@ -117,9 +135,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-sm-2">Nomor Telepon</div>
         <div class="col-sm-4">Example</div>
       </div>
+
+
       <div class="row">
-        <div class="col-sm-4" style="margin-left:217px"><a href="#">Tambahkan Nomor Telepon</a></div>
+        <div class="col-sm-4" style="margin-left:217px"><a href="#"  data-toggle="modal" data-target="#modals2">Tambahkan Nomor Telepon</a></div>
       </div>
+      <div class="modal fade" id="modals2">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Modal header -->
+            <div class="modal-header">
+              <h5>Tambah Ponsel</h5>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <small class="form-text">Telepon</small>
+              <input  class="form-control" type="text" name="tlp" value="">
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <a href="#" data-dismiss="modal" style="color:grey">Batal</a>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Selesai</button>
+            </div>
+        </div>
+      </div>
+    </div>
 
       <div class="row">
         <div class="col-sm-6"> <hr> </div>
@@ -127,8 +169,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <div class="row">
         <div class="col-sm-2">Sandi</div>
-        <div class="col-sm-4"><a href="#">Ubah Sandi</a></div>
+        <div class="col-sm-4"><a href="#" data-toggle="modal" data-target="#myModal">Ubah Sandi</a></div>
       </div>
+
+      <!-- myModal  -->
+      <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Masukkan Sandi</h5>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <input  class="form-control" type="password" name="pass" value="" placeholder="Sandi">
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <a href="#" data-dismiss="modal" style="color:grey">Batal</a>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Selesai</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
       <div class="row">
         <div class="col-sm-6"> <hr> </div>
