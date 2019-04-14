@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -50,13 +52,13 @@
     #profile > .row{
       margin-left:200px;
     }
-
     </style>
 
   </head>
   <body>
 
-    <nav id="navs" class="navbar navbar-expand-sm navbar-light" style="padding: .1rem 1rem; border-bottom:1px solid #cccccc;">
+   <!-- NAVBAR -->
+   <nav id="navs" class="navbar navbar-expand-sm navbar-light" style="padding: .1rem 1rem; border-bottom:1px solid #cccccc;">
       <div class="header_logo u-flex-none" style="margin-right:20px;">
         <a class="navbar-brand" href="<?php echo site_url('home');?>">
           <img src="https://2xawx0gmudy471po527lbxcd-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/quora-604x400.png" alt="logo" style="width:70px; height=70px;">
@@ -65,7 +67,7 @@
 
       <ul id="list" class="navbar-nav">
         <li id="wan" class="nav-item" style="margin-right:20px;">
-          <a id="beranda" href="<?php echo site_url('home');?>" class="nav-link">Beranda</a>
+          <a id="beranda" href="<?php echo site_url('home');?>" class="nav-link" style="border-bottom: 1px solid #b92b27; color:#b92b27;">Beranda</a>
         </li>
         <li id="cu" class="nav-item" style="margin-right:20px;">
           <a href="<?php echo site_url('answer');?>" class="nav-link">Jawab</a>
@@ -90,14 +92,49 @@
             <small class="form-text text-muted"><a href="<?php echo site_url('login');?>" style="color:grey; margin-left:25px;">Keluar</a></small>
           </div>
         </div>
+      </div>
       </form>
 
       <form class="form-inline">
-        <input class="btn btn-danger" type="button" name="" value="Tambah Pertanyaan" style="padding:3px; background-color:#b92b27; border: 1px solid #b92b27;">
+        <input class="btn btn-danger" type="button" name="" value="Tambah Pertanyaan" data-toggle="modal" data-target="#navTmbh" style="padding:3px; background-color:#b92b27; border: 1px solid #b92b27;">
+
+        <!-- The Modal -->
+       <div class="modal fade" id="navTmbh">
+         <div class="modal-dialog">
+           <div class="modal-content">
+
+             <!-- Modal Body -->
+             <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-2">
+                    <img class="profile_photo_img" src="https://qph.fs.quoracdn.net/main-thumb-760271012-200-ypqyshmmmvregybgycawmthfrkfomytl.jpeg" alt="Son Of Zeuz" height="30" width="30">
+                  </div>
+                  <div class="col-sm-2">
+                    <small class="form-text text-muted"><a href="<?php echo site_url('profile');?>" style="color:grey; margin-left:-25px; ">Nama User</a></small>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-top:20px;">
+                  <div class="col">
+                    <input id="navs11" class="form-control" type="text" name="" placeholder="Awali pertanyaan Anda dengan &quot;Apa&quot;, &quot;Bagaimana&quot;, &quot;Mengapa&quot;, dll." style="border:none; width: 100%;">
+                  </div>
+                </div>
+             </div>
+
+             <!-- Modal Footer -->
+             <div class="modal-footer">
+               <small class="form-text text-muted"><a href="" style="color:grey;"  data-dismiss="modal">Batal</a></small>
+               <button type="submit" class="btn btn-primary">Tambah Pertanyaan</button>
+             </div>
+
+           </div>
+         </div>
+       </div>
       </form>
     </nav>
-    <!--BATAS SETELAH NAVBAR-->
+    <!--END OF NAVBAR-->
 
+    <!-- PROFILE SECTION -->
     <form id="profile">
       <div class="row">
         <div class="col-sm-3">
@@ -131,6 +168,7 @@
         </div>
       </div>
     </form>
+    <!-- END OF PROFILE SECTION -->
 
   </body>
 </html>

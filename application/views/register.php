@@ -72,10 +72,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     #sandi{
       background-color:#c9c9c9;
     }
-
-
     </style>
+
   </head>
+
   <body>
     <div class="container" style="margin-bottom:100px;">
       <table>
@@ -87,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </tr>
         <tr>
 
-        <!-- Register Form -->
+        <!-- REGISTER FORM -->
           <td id="daft">
             <div class="form-group row">
               <div class="col-xs-2">
@@ -117,9 +117,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
           </td>
-          <!-- End of Register Form -->
+          <!-- END OF REGISTER FORM -->
 
-          <!--Login Form -->
+          <!-- LOGIN FORM -->
           <td>
             <form action="<?php echo site_url('login/signin');?>" method="POST" id="form" style="margin-left:150px; margin-bottom:270px;">
               <div class="form-group row">
@@ -137,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </form>
           </td>
-          <!-- End of Login Form -->
+          <!-- END OF LOGIN FORM -->
 
         </tr>
         <tr>

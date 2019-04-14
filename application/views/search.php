@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -42,26 +44,27 @@
       background-color: #c9ddff;
     }
     </style>
-
   </head>
+
   <body>
+    <!-- NAVBAR -->
     <nav id="navs" class="navbar navbar-expand-sm navbar-light" style="padding: .1rem 1rem; border-bottom:1px solid #cccccc;">
       <div class="header_logo u-flex-none" style="margin-right:20px;">
-        <a class="navbar-brand" href="<?php echo site_url('home'); ?>">
+        <a class="navbar-brand" href="<?php echo site_url('home');?>">
           <img src="https://2xawx0gmudy471po527lbxcd-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/quora-604x400.png" alt="logo" style="width:70px; height=70px;">
         </a>
       </div>
 
       <ul id="list" class="navbar-nav">
         <li id="wan" class="nav-item" style="margin-right:20px;">
-          <a id="beranda" href="<?php echo site_url('home'); ?>" class="nav-link">Beranda</a>
+          <a id="beranda" href="<?php echo site_url('home');?>" class="nav-link">Beranda</a>
         </li>
         <li id="cu" class="nav-item" style="margin-right:20px;">
-          <a href="<?php echo site_url('answer'); ?>" class="nav-link">Jawab</a>
+          <a href="<?php echo site_url('answer');?>" class="nav-link">Jawab</a>
         </li>
       </ul>
 
-      <form class="form-inline" action="/action_page.php" style="margin-right:20px;">
+      <form class="form-inline" action="<?php echo site_url('search'); ?>" style="margin-right:20px;">
         <input class="form-control mr-sm-2" type="text" placeholder=" Cari Quora" style="padding:1px; width:355px;">
         <!--<button class="btn btn-success" type="submit">Search</button>-->
       </form>
@@ -72,20 +75,56 @@
             S
           </button>
           <div class="dropdown-menu" style="margin-top:17px;">
-            <a id="dr" class="dropdown-item" href="<?php echo site_url('profile'); ?>" style="color:#2673ef; font-size:14px;">Profil</a>
-            <a id="dr" class="dropdown-item" href="<?php echo site_url('settings'); ?>" style="color:#2673ef; font-size:14px;">Setelan</a>
+            <a id="dr" class="dropdown-item" href="<?php echo site_url('profile');?>" style="color:#2673ef; font-size:14px;">Profil</a>
+            <a id="dr" class="dropdown-item" href="<?php echo site_url('settings');?>" style="color:#2673ef; font-size:14px;">Setelan</a>
             <h5 class="dropdown-header"> <hr> </h5>
             <small class="form-text text-muted"><a href="<?php echo site_url('about');?>" style="color:grey; margin-left:25px;">Tentang Kami</a></small>
-            <small class="form-text text-muted"><a href="<?php echo site_url('login'); ?>" style="color:grey; margin-left:25px;">Keluar</a></small>
+            <small class="form-text text-muted"><a href="<?php echo site_url('login');?>" style="color:grey; margin-left:25px;">Keluar</a></small>
           </div>
         </div>
+      </div>
       </form>
 
       <form class="form-inline">
-        <input class="btn btn-danger" type="button" name="" value="Tambah Pertanyaan" style="padding:3px; background-color:#b92b27; border: 1px solid #b92b27;">
+        <input class="btn btn-danger" type="button" name="" value="Tambah Pertanyaan" data-toggle="modal" data-target="#navTmbh" style="padding:3px; background-color:#b92b27; border: 1px solid #b92b27;">
+
+        <!-- The Modal -->
+       <div class="modal fade" id="navTmbh">
+         <div class="modal-dialog">
+           <div class="modal-content">
+
+             <!-- Modal Body -->
+             <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-2">
+                    <img class="profile_photo_img" src="https://qph.fs.quoracdn.net/main-thumb-760271012-200-ypqyshmmmvregybgycawmthfrkfomytl.jpeg" alt="Son Of Zeuz" height="30" width="30">
+                  </div>
+                  <div class="col-sm-2">
+                    <small class="form-text text-muted"><a href="#" style="color:grey; margin-left:-25px; ">Nama User</a></small>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-top:20px;">
+                  <div class="col">
+                    <input id="navs11" class="form-control" type="text" name="" placeholder="Awali pertanyaan Anda dengan &quot;Apa&quot;, &quot;Bagaimana&quot;, &quot;Mengapa&quot;, dll." style="border:none;  width: 100%;">
+                  </div>
+                </div>
+             </div>
+
+             <!-- Modal Footer -->
+             <div class="modal-footer">
+               <small class="form-text text-muted"><a href="#" style="color:grey;"  data-dismiss="modal">Batal</a></small>
+               <button type="submit" class="btn btn-primary">Tambah Pertanyaan</button>
+             </div>
+
+           </div>
+         </div>
+       </div>
       </form>
     </nav>
-    <!--BATAS SETELAH NAVBAR-->
+    <!-- END OF NAVBAR -->
+
+    <!-- SEARCH SECTION -->
     <form class="Search">
       <div class="row">
         <div class="col">
@@ -114,5 +153,7 @@
       </div>
 
     </form>
+    <!-- END OF SEARCH SECTION -->
+    
   </body>
 </html>

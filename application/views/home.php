@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -56,8 +58,9 @@
     }
     </style>
   </head>
+  
   <body>
-
+    <!-- NAVBAR -->
     <nav id="navs" class="navbar navbar-expand-sm navbar-light" style="padding: .1rem 1rem; border-bottom:1px solid #cccccc;">
       <div class="header_logo u-flex-none" style="margin-right:20px;">
         <a class="navbar-brand" href="<?php echo site_url('home');?>">
@@ -103,7 +106,7 @@
          <div class="modal-dialog">
            <div class="modal-content">
 
-             <!-- Modal body -->
+             <!-- Modal Body -->
              <div class="modal-body">
                 <div class="row">
                   <div class="col-sm-2">
@@ -121,7 +124,7 @@
                 </div>
              </div>
 
-             <!-- Modal footer -->
+             <!-- Modal Footer -->
              <div class="modal-footer">
                <small class="form-text text-muted"><a href="" style="color:grey;"  data-dismiss="modal">Batal</a></small>
                <button type="submit" class="btn btn-primary">Tambah Pertanyaan</button>
@@ -132,7 +135,9 @@
        </div>
       </form>
     </nav>
-    <!--BATAS SETELAH NAVBAR-->
+    <!--END OF NAVBAR-->
+
+    <!-- CONTENT -->
     <form id="main">
       <div class="container" style="border-radius:2px; margin-top:30px;">
         <div class="row" style="margin-left:0px;">
@@ -149,11 +154,12 @@
         </div>
       </div>
 
+      <!-- The Modal -->
       <div class="modal fade" id="pertanyaan">
         <div class="modal-dialog">
           <div class="modal-content">
 
-            <!-- Modal body -->
+            <!-- Modal Body -->
             <div class="modal-body">
                <div class="row">
                  <div class="col-sm-2">
@@ -171,7 +177,7 @@
                </div>
             </div>
 
-            <!-- Modal footer -->
+            <!-- Modal Footer -->
             <div class="modal-footer">
               <small class="form-text text-muted"><a href="" style="color:grey;"  data-dismiss="modal">Batal</a></small>
               <button type="submit" class="btn btn-primary">Tambah Pertanyaan</button>
@@ -181,10 +187,9 @@
         </div>
       </div>
     </form>
-    <!--BATAS MULAI MASUK POSTINGAN-->
-    <?php
-    foreach($questionlist as $question) {
-    echo "
+    <!--END OF NAVBAR -->
+
+    <!-- QUESTION SECTION -->
     <form class='post' style='margin-top:10px;'>
       <div class='container' style='border-radius:2px;'>
         <div class='row'>
@@ -194,7 +199,7 @@
         </div>
         <div class='row'>
           <div class='col'>
-          <a href='#' style='color:black; margin-left:10px; font-size:20px;'>$question->question</a>
+          <a href='' style='color:black; margin-left:10px; font-size:20px;'></a>
           </div>
         </div>
         <div class='row'>
@@ -204,8 +209,7 @@
         </div>
       </div>
     </form>
-    ";
-    }
-    ?>
+    <!-- END OF QUESTION SECTION -->
+
   </body>
 </html>

@@ -46,9 +46,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     #txt{
       margin-left: 40px;
     }
-
     </style>
   </head>
+
   <body>
     <div class="container">
       <table>
@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <th colspan="2"><h4 id="header" style="font-size:19px; text-align:center; color:grey;">Tempat berbagi pengetahuan dan memahami dunia lebih baik</h4></th>
         </tr>
         <tr>
-          <!-- Term of Service -->
+          <!-- TERM OF SERVICE AGREEMENT -->
           <td>
             <small id="txt" class="form-text text-muted"><a href="<?php echo site_url('login/signup'); ?>" >Lanjutkan dengan Surel</a>. Dengan mendaftar, </small>
             <small id="txt" class="form-text text-muted">Anda menunjukkan bahwa Anda telah</small>
@@ -67,9 +67,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <small id="txt" class="form-text text-muted">Layanan dan Kebijakan Privasi Quora dan</small>
             <small id="txt" class="form-text text-muted">setuju bahwa informasi Anda bersifat akurat.</small>
           </td>
-          <!-- End of ToS -->
+          <!-- END OF TOS -->
 
-          <!-- Login Form  -->
+          <!-- LOGIN FORM  -->
           <td>
             <form action="<?php echo site_url('login/signin');?>" method="POST" id="form" style="margin-left:30px; margin-bottom:30px;">
               <div class="form-group row">
@@ -87,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </form>
           </td>
-          <!-- End of Login Form -->
+          <!-- END OF LOGIN FORM -->
 
         </tr>
         <tr>

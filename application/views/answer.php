@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -50,12 +52,11 @@
     .profile_photo_img{
       border-radius:50%;
     }
-
     </style>
 
   </head>
   <body>
-
+    <!-- NAVBAR -->
     <nav id="navs" class="navbar navbar-expand-sm navbar-light" style="padding: .1rem 1rem; border-bottom:1px solid #cccccc;">
       <div class="header_logo u-flex-none" style="margin-right:20px;">
         <a class="navbar-brand" href="<?php echo site_url('home');?>">
@@ -100,7 +101,7 @@
          <div class="modal-dialog">
            <div class="modal-content">
 
-             <!-- Modal body -->
+             <!-- Modal Body -->
              <div class="modal-body">
                 <div class="row">
                   <div class="col-sm-2">
@@ -118,7 +119,7 @@
                 </div>
              </div>
 
-             <!-- Modal footer -->
+             <!-- Modal Footer -->
              <div class="modal-footer">
                <small class="form-text text-muted"><a href="#" style="color:grey;"  data-dismiss="modal">Batal</a></small>
                <button type="submit" class="btn btn-primary">Tambah Pertanyaan</button>
@@ -129,7 +130,9 @@
        </div>
       </form>
     </nav>
-    <!--BATAS NAVBAR-->
+    <!--END OF NAVBAR-->
+
+    <!-- ANSWER SECTION -->
     <form class="">
       <div class="container" style="margin-top:30px;">
         <h5 style="margin-left:10px;">Pertanyaan Untuk Anda</h5>
@@ -147,7 +150,7 @@
           <button type="submit" class="btn btn-primary" name="button" style="margin-top:5px;">Selesai</button>
         </div>
       </div>
-
     </form>
+    <!-- END OF ANSWER SECTION -->
 
 </body>

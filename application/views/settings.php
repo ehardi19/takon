@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -53,12 +55,11 @@
     .set > .row{
       justify-content:center;
     }
-
     </style>
-
   </head>
-  <body>
 
+  <body>
+    <!-- NAVBAR -->
     <nav id="navs" class="navbar navbar-expand-sm navbar-light" style="padding: .1rem 1rem; border-bottom:1px solid #cccccc;">
       <div class="header_logo u-flex-none" style="margin-right:20px;">
         <a class="navbar-brand" href="<?php echo site_url('home');?>">
@@ -75,7 +76,7 @@
         </li>
       </ul>
 
-      <form class="form-inline" action="/action_page.php" style="margin-right:20px;">
+      <form class="form-inline" action="<?php echo site_url('search'); ?>" style="margin-right:20px;">
         <input class="form-control mr-sm-2" type="text" placeholder=" Cari Quora" style="padding:1px; width:355px;">
         <!--<button class="btn btn-success" type="submit">Search</button>-->
       </form>
@@ -93,13 +94,49 @@
             <small class="form-text text-muted"><a href="<?php echo site_url('login');?>" style="color:grey; margin-left:25px;">Keluar</a></small>
           </div>
         </div>
+      </div>
       </form>
 
       <form class="form-inline">
-        <input class="btn btn-danger" type="button" name="" value="Tambah Pertanyaan" style="padding:3px; background-color:#b92b27; border: 1px solid #b92b27;">
+        <input class="btn btn-danger" type="button" name="" value="Tambah Pertanyaan" data-toggle="modal" data-target="#navTmbh" style="padding:3px; background-color:#b92b27; border: 1px solid #b92b27;">
+
+        <!-- The Modal -->
+       <div class="modal fade" id="navTmbh">
+         <div class="modal-dialog">
+           <div class="modal-content">
+
+             <!-- Modal Body -->
+             <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-2">
+                    <img class="profile_photo_img" src="https://qph.fs.quoracdn.net/main-thumb-760271012-200-ypqyshmmmvregybgycawmthfrkfomytl.jpeg" alt="Son Of Zeuz" height="30" width="30">
+                  </div>
+                  <div class="col-sm-2">
+                    <small class="form-text text-muted"><a href="#" style="color:grey; margin-left:-25px; ">Nama User</a></small>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-top:20px;">
+                  <div class="col">
+                    <input id="navs11" class="form-control" type="text" name="" placeholder="Awali pertanyaan Anda dengan &quot;Apa&quot;, &quot;Bagaimana&quot;, &quot;Mengapa&quot;, dll." style="border:none;  width: 100%;">
+                  </div>
+                </div>
+             </div>
+
+             <!-- Modal Footer -->
+             <div class="modal-footer">
+               <small class="form-text text-muted"><a href="#" style="color:grey;"  data-dismiss="modal">Batal</a></small>
+               <button type="submit" class="btn btn-primary">Tambah Pertanyaan</button>
+             </div>
+
+           </div>
+         </div>
+       </div>
       </form>
     </nav>
-    <!--BATAS SETELAH NAVBAR-->
+    <!-- END OF NAVBAR -->
+
+    <!-- SETTINGS SECTION -->
     <form class="set">
       <div class="row" style="margin-left:115px; margin-top:40px;">
         <div class="col-sm-8">Setelan Akun</div>
@@ -118,7 +155,8 @@
           <a href="#" data-toggle="collapse" data-target="#demo">Tambah Alamat Surel Lain</a>
         </div>
       </div>
-      <!-- collapse  -->
+
+      <!-- Collapse  -->
       <div class="row">
         <div class="col-sm-4" style="margin-left:217px">
           <div id="demo" class="collapse">
@@ -137,25 +175,26 @@
         <div class="col-sm-4">Example</div>
       </div>
 
-
       <div class="row">
         <div class="col-sm-4" style="margin-left:217px"><a href="#"  data-toggle="modal" data-target="#modals2">Tambahkan Nomor Telepon</a></div>
       </div>
+
+      <!-- Phone Modal -->
       <div class="modal fade" id="modals2">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <!-- Modal header -->
+            <!-- Modal Header -->
             <div class="modal-header">
               <h5>Tambah Ponsel</h5>
             </div>
 
-            <!-- Modal body -->
+            <!-- Modal Body -->
             <div class="modal-body">
               <small class="form-text">Telepon</small>
               <input  class="form-control" type="text" name="tlp" value="">
             </div>
 
-            <!-- Modal footer -->
+            <!-- Modal Footer -->
             <div class="modal-footer">
               <a href="#" data-dismiss="modal" style="color:grey">Batal</a>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Selesai</button>
@@ -173,7 +212,7 @@
         <div class="col-sm-4"><a href="#" data-toggle="modal" data-target="#myModal">Ubah Sandi</a></div>
       </div>
 
-      <!-- myModal  -->
+      <!-- Password Modal  -->
       <div class="modal fade" id="myModal">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -181,12 +220,12 @@
             <h5>Masukkan Sandi</h5>
           </div>
 
-          <!-- Modal body -->
+          <!-- Modal Body -->
           <div class="modal-body">
             <input  class="form-control" type="password" name="pass" value="" placeholder="Sandi">
           </div>
 
-          <!-- Modal footer -->
+          <!-- Modal Footer -->
           <div class="modal-footer">
             <a href="#" data-dismiss="modal" style="color:grey">Batal</a>
             <button type="button" class="btn btn-primary" data-dismiss="modal">Selesai</button>
@@ -208,6 +247,7 @@
         <div class="col-sm-4" style="margin-left:217px"><a href="<?php echo site_url('login');?>">Keluar dari semua peramban lain</a></div>
       </div>
     </form>
+    <!-- END OF SETTINGS SECTION -->
 
   </body>
 </html>
