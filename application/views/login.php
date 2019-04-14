@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -57,31 +59,36 @@
           <th colspan="2"><h4 id="header" style="font-size:19px; text-align:center; color:grey;">Tempat berbagi pengetahuan dan memahami dunia lebih baik</h4></th>
         </tr>
         <tr>
+          <!-- Term of Service -->
           <td>
-            <small id="txt" class="form-text text-muted"><a href="<?php echo site_url('register'); ?>" >Lanjutkan dengan Surel</a>. Dengan mendaftar, </small>
+            <small id="txt" class="form-text text-muted"><a href="<?php echo site_url('login/signup'); ?>" >Lanjutkan dengan Surel</a>. Dengan mendaftar, </small>
             <small id="txt" class="form-text text-muted">Anda menunjukkan bahwa Anda telah</small>
             <small id="txt" class="form-text text-muted">membaca dan menyetujui Persyaratan</small>
             <small id="txt" class="form-text text-muted">Layanan dan Kebijakan Privasi Quora dan</small>
             <small id="txt" class="form-text text-muted">setuju bahwa informasi Anda bersifat akurat.</small>
           </td>
-          <!--Login Form -->
+          <!-- End of ToS -->
+
+          <!-- Login Form  -->
           <td>
-            <form action="<?php echo site_url('login/signin');?>" method="POST" id="form" style="margin-right:40px; margin-bottom:30px;">
+            <form action="<?php echo site_url('login/signin');?>" method="POST" id="form" style="margin-left:30px; margin-bottom:30px;">
               <div class="form-group row">
                 <div class="col-xs-2">
                   <small class="form-text text-muted" style="color:#000000;"><b>Masuk</b></small>
-                  <input id="surel" class="form-control" type="email" name="email" value="" placeholder="Surel" required>
+                  <input id="surel" class="form-control" type="email" name="email" value="" placeholder="Surel">
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-xs-2">
-                  <input id="sandi" class="form-control" type="password" name="pass" value="" placeholder="Sandi" required>
+                  <input id="sandi" class="form-control" type="password" name="password" value="" placeholder="Sandi" >
                   <small class="form-text text-muted"><a href="#" style="color:grey;">Lupa sandi</a>?</small>
                   <input id="btn" class="btn btn-primary" type="submit" name="submit" value="Masuk">
                 </div>
               </div>
             </form>
           </td>
+          <!-- End of Login Form -->
+
         </tr>
         <tr>
           <td colspan="2" style="text-align:center"> <hr> </td>

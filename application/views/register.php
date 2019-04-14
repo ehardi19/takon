@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -84,9 +86,9 @@
           <th colspan="2"><h4 id="header" style="font-size:19px; text-align:center; color:grey;">Tempat berbagi pengetahuan dan memahami dunia lebih baik</h4></th>
         </tr>
         <tr>
-          <!--Register Form-->
-          <td id="draft">
-          <form action="" method="POST">
+
+        <!-- Register Form -->
+          <td id="daft">
             <div class="form-group row">
               <div class="col-xs-2">
                 <label>Nama</label>
@@ -114,11 +116,12 @@
                 <input class="btn btn-primary" type="submit" name="" value="Daftar" style="float:right; margin-bottom:20px; background-color:#3e78ad; padding: 3px;">
               </div>
             </div>
-          </form>
           </td>
+          <!-- End of Register Form -->
+
           <!--Login Form -->
           <td>
-             <form action="<?php echo site_url('login/signin');?>" method="POST" id="form" style="margin-right:40px; height:100px;">
+            <form action="<?php echo site_url('login/signin');?>" method="POST" id="form" style="margin-left:150px; margin-bottom:270px;">
               <div class="form-group row">
                 <div class="col-xs-2">
                   <small class="form-text text-muted" style="color:#000000;"><b>Masuk</b></small>
@@ -127,13 +130,15 @@
               </div>
               <div class="form-group row">
                 <div class="col-xs-2">
-                  <input id="sandi" class="form-control" type="password" name="pass" value="" placeholder="Sandi" >
+                  <input id="sandi" class="form-control" type="password" name="password" value="" placeholder="Sandi" >
                   <small class="form-text text-muted"><a href="#" style="color:grey;">Lupa sandi</a>?</small>
                   <input id="btn" class="btn btn-primary" type="submit" name="submit" value="Masuk">
                 </div>
               </div>
-             </form>
+            </form>
           </td>
+          <!-- End of Login Form -->
+
         </tr>
         <tr>
           <td colspan="2"  style="text-align:center; font-size:10px">© Quora Inc. 2019</td>
