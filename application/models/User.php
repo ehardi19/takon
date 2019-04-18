@@ -69,7 +69,8 @@ class User extends CI_Model {
         );
 
         $this->db->where('user_id', $user_id);
-        $update = $this->db->update('user', $data);
+        
+        return $this->db->update('user', $data);
     }
 
     // Delte user by user_id
@@ -77,6 +78,7 @@ class User extends CI_Model {
         $user_id = $this->input->post('user_id');
 
         $this->db->where('user_id', $user_id);
-        $this->db->delete('user');
+        
+        return $this->db->delete('user');
     }
 }
