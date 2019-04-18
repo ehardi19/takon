@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Model {
+class User_Model extends CI_Model {
 
     // Check if email is exist
     function isExist($email) {
@@ -29,16 +29,6 @@ class User extends CI_Model {
 
     }
 
-    // Get user data by user_id
-    function getUserById() {
-        $user_id = $this->input->post('user_id');
-
-        $this->db->where('user_id', $user_id);
-        $result = $this->db->get('user')->result();
-
-        return $result->result_array();
-    }
-
     // Create new user
     function createUser() {
         $data = array(
@@ -54,31 +44,5 @@ class User extends CI_Model {
             $this->db->insert('user', $data);
             return true;
         }
-    }
-
-    // Update user by user_id
-    function updateUser() {
-        $user_id = $this->input->post('user_id');
-
-        $data = array(
-            'first_name'   => $this->put('first_name'),
-            'last_name'    => $this->put('last_name'),
-            'phone'        => $this->put('phone'),
-            'email'        => $this->put('email'),
-            'password'     => $this->put('password')
-        );
-
-        $this->db->where('user_id', $user_id);
-        
-        return $this->db->update('user', $data);
-    }
-
-    // Delte user by user_id
-    function index_delete() {
-        $user_id = $this->input->post('user_id');
-
-        $this->db->where('user_id', $user_id);
-        
-        return $this->db->delete('user');
     }
 }

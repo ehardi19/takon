@@ -8,7 +8,7 @@ Class Login extends CI_Controller{
     }
 
     public function index() {
-        $this->load->view('login');
+        $this->load->view('landing/login');
     }
 
     public function signup() {
@@ -16,10 +16,17 @@ Class Login extends CI_Controller{
     }
 
     public function signin() {
-        if($this->User->getUserByEmail()) {
+        $user = $this->User_Model->getUserByEmail();
+        if($user != null) {
+            $this->session->set_userdata('user', $user[0]);
             redirect('home');
         } else {
             redirect('login');
         }
+    }
+
+    public function signout() {
+        session_destroy();
+        redirect('login');
     }
 }

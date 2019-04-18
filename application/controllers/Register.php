@@ -8,11 +8,12 @@ Class Register extends CI_Controller{
     }
 
     public function index() {
-        $this->load->view('register');
+        $this->load->view('landing/register');
     }
 
     public function regist() {
-        if($this->User->createUser()) {
+        $user = $this->User_Model->createUser();
+        if($user != null) {
             redirect('login');
         } else {
             redirect('register');
