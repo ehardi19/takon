@@ -3,42 +3,62 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Model {
 
+    // Check if email is exist
+    function isExist($email) {
+        $this->db->where("email", $email);
+        $result = $this->db->get('user')->result_array();
+        
+        if(isset($result[0])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // Get user data by email
     function getUserByEmail() {
-        $email = $this->get('email');
-        
-        $this->db->where('email', $email);
-        $result = $this->db->get('user')->result();
-    
-        return $result;
+        $data = array(
+            "email" => $this->input->post('email'),
+            "password" => md5($this->input->post('password'))
+        );
+
+        $this->db->where($data);
+        $result = $this->db->get('user');
+
+        return $result->result_array();
+
     }
 
     // Get user data by user_id
     function getUserById() {
-        $user_id = $this->get('user_id');
+        $user_id = $this->input->post('user_id');
 
         $this->db->where('user_id', $user_id);
         $result = $this->db->get('user')->result();
 
-        return $result;
+        return $result->result_array();
     }
 
     // Create new user
     function createUser() {
         $data = array(
-            'first_name'   => $this->post('first_name'),
-            'last_name'    => $this->post('last_name'),
-            'phone'        => $this->post('phone'),
-            'email'        => $this->post('email'),
-            'password'     => $this->post('password')
+            'full_name'    => $this->input->post('full_name'),
+            'phone'        => $this->input->post('phone'),
+            'email'        => $this->input->post('email'),
+            'password'     => md5($this->input->post('password'))
         );
 
-        $insert = $this->db->insert('user', $data);
+        if ($this->isExist($data['email'])) {
+            return false;
+        } else {
+            $this->db->insert('user', $data);
+            return true;
+        }
     }
 
     // Update user by user_id
     function updateUser() {
-        $user_id = $this->put('user_id');
+        $user_id = $this->input->post('user_id');
 
         $data = array(
             'first_name'   => $this->put('first_name'),
@@ -54,9 +74,9 @@ class User extends CI_Model {
 
     // Delte user by user_id
     function index_delete() {
-        $user_id = $this->delete('user_id');
+        $user_id = $this->input->post('user_id');
 
         $this->db->where('user_id', $user_id);
-        $delete = $this->db->delete('user');
+        $this->db->delete('user');
     }
 }

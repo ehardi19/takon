@@ -89,33 +89,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <!-- REGISTER FORM -->
           <td id="daft">
+            <form method="POST" action="<?php echo site_url('Register/regist');?>" method="POST">
+            <?php if($this->session->flashdata('success')) {?>
+              <div class="alert alert-success" role="alert">
+                Tis is a success alert—check it out!
+              </div>
+            <?php }?>
             <div class="form-group row">
               <div class="col-xs-2">
                 <label>Nama</label>
-                <input class="form-control form-control-sm" type="text" name="Nama" value="">
+                <input class="form-control form-control-sm" type="text" name="full_name" value="" required>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-xs-2">
-                <label>Telepon(Opsional)</label>
-                <input class="form-control form-control-sm" type="text" name="Telepon" value="">
+                <label>Telepon (Opsional)</label>
+                <input class="form-control form-control-sm" type="tel" name="phone" value="">
               </div>
             </div>
             <div class="form-group row">
               <div class="col-xs-2">
                 <label>Surel</label>
-                <input class="form-control form-control-sm" type="text" name="Surel" value="">
+                <input class="form-control form-control-sm" type="email" name="email" value="" required>
               </div>
             </div><div class="form-group row">
               <div class="col-xs-2">
                 <label>Sandi</label>
-                <input class="form-control form-control-sm" type="password" name="Sandi" value="">
+                <input class="form-control form-control-sm" type="password" name="password" value="" required>
                 <small class="form-text text-muted" style="color:#000000; margin-left:50px;" >Dengan mengklik "Daftar", Anda </small>
                 <small class="form-text text-muted" style="color:#000000; margin-left:50px;" >menunjukkan bahwa Anda setuju </small>
                 <small class="form-text text-muted"> <a href="<?php echo site_url('login');?>" style="margin-left:50px">Batal</a></small>
-                <input class="btn btn-primary" type="submit" name="" value="Daftar" style="float:right; margin-bottom:20px; background-color:#3e78ad; padding: 3px;">
+                <input class="btn btn-primary" type="submit" name="register" value="Daftar" style="float:right; margin-bottom:20px; background-color:#3e78ad; padding: 3px;">
               </div>
             </div>
+            </form>
           </td>
           <!-- END OF REGISTER FORM -->
 
@@ -125,14 +132,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="form-group row">
                 <div class="col-xs-2">
                   <small class="form-text text-muted" style="color:#000000;"><b>Masuk</b></small>
-                  <input id="surel" class="form-control" type="email" name="email" value="" placeholder="Surel">
+                  <input id="surel" class="form-control" type="email" name="email" value="" placeholder="Surel" required>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-xs-2">
-                  <input id="sandi" class="form-control" type="password" name="password" value="" placeholder="Sandi" >
+                  <input id="sandi" class="form-control" type="password" name="password" value="" placeholder="Sandi" required>
                   <small class="form-text text-muted"><a href="#" style="color:grey;">Lupa sandi</a>?</small>
-                  <input id="btn" class="btn btn-primary" type="submit" name="submit" value="Masuk">
+                  <input id="btn" class="btn btn-primary" type="submit" name="login" value="Masuk">
                 </div>
               </div>
             </form>

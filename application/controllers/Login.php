@@ -5,10 +5,6 @@ Class Login extends CI_Controller{
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('user');
-        $this->load->library('session');
-        $this->load->helper('form');
-        $this->load->helper('url');
     }
 
     public function index() {
@@ -19,7 +15,11 @@ Class Login extends CI_Controller{
         redirect('register');
     }
 
-    public function signin() {        
-        redirect('home');
+    public function signin() {
+        if($this->User->getUserByEmail()) {
+            redirect('home');
+        } else {
+            redirect('login');
+        }
     }
 }

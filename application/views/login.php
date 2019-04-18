@@ -75,14 +75,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="form-group row">
                 <div class="col-xs-2">
                   <small class="form-text text-muted" style="color:#000000;"><b>Masuk</b></small>
-                  <input id="surel" class="form-control" type="email" name="email" value="" placeholder="Surel">
+                  <input id="surel" class="form-control" type="email" name="email" value="" placeholder="Surel" required>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-xs-2">
-                  <input id="sandi" class="form-control" type="password" name="password" value="" placeholder="Sandi" >
+                  <input id="sandi" class="form-control" type="password" name="password" value="" placeholder="Sandi" required>
                   <small class="form-text text-muted"><a href="#" style="color:grey;">Lupa sandi</a>?</small>
-                  <input id="btn" class="btn btn-primary" type="submit" name="submit" value="Masuk">
+                  <input id="btn" class="btn btn-primary" type="submit" name="login" value="Masuk">
                 </div>
               </div>
             </form>
