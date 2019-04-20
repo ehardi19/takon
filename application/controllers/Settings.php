@@ -11,4 +11,11 @@ Class Settings extends CI_Controller{
         $this->load->view('settings/header');
         $this->load->view('settings/settings');
     }
+
+    public function edit() {
+        $user = $this->User_Model->editUser();
+        if ($user != null) {
+            echo "Succcess";
+        }
+    }
 }

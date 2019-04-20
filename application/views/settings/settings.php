@@ -22,9 +22,11 @@
       <div class="row">
         <div class="col-sm-4" style="margin-left:217px">
           <div id="demo" class="collapse">
+            <form action="<?php echo site_url('settings/edit');?>" method="POST">
               <input id="emailNew" class="form-control" type="email" name="email" value="" placeholder="name@example.com" width="10px">
               <input  id="btnNew" class="btn btn-primary" type="submit" name="submit" value="Tambah Surel" width="5px;">
-          </div>
+            </form>
+            </div>
         </div>
       </div>
 
@@ -51,6 +53,7 @@
             </div>
 
             <!-- Modal Body -->
+            <form action="<?php echo site_url('settings/edit');?>" method="POST">
             <div class="modal-body">
               <small class="form-text">Telepon</small>
               <input  class="form-control" type="text" name="tlp" value="">
@@ -61,6 +64,7 @@
               <a href="#" data-dismiss="modal" style="color:grey">Batal</a>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Selesai</button>
             </div>
+            </form>
         </div>
       </div>
     </div>
@@ -83,6 +87,7 @@
           </div>
 
           <!-- Modal Body -->
+          <form action="<?php echo site_url('settings/edit');?>" method="POST">
           <div class="modal-body">
             <input class="form-control" type="password" name="password" value="" placeholder="Sandi">
           </div>
@@ -92,6 +97,7 @@
             <a href="#" data-dismiss="modal" style="color:grey">Batal</a>
             <button type="button" class="btn btn-primary" data-dismiss="modal">Selesai</button>
           </div>
+          </form>
 
         </div>
       </div>

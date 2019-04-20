@@ -15,7 +15,7 @@ class User_Model extends CI_Model {
         }
     }
 
-    // Get user data by email
+    // Retrieve user data by email
     function getUserByEmail() {
         $data = array(
             "email" => $this->input->post('email'),
@@ -44,5 +44,17 @@ class User_Model extends CI_Model {
             $this->db->insert('user', $data);
             return true;
         }
+    }
+
+    // edit user by user_id
+    function editUser() {
+        $data = array(
+            'phone'        => $this->input->post('phone'),
+            'email'        => $this->input->post('email'),
+            'password'     => md5($this->input->post('password'))
+        );
+        $user_id = $_SESSION['user']['user_id'];
+
+        $this->db->update('user', $data, $user_id);
     }
 }

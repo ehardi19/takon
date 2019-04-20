@@ -11,6 +11,6 @@ Class Home extends CI_Controller{
         $data = $this->Question_Model->getAllQuestion();
 
         $this->load->view('home/header');
-        $this->load->view('home/home', ['data' => $data]);
+        $this->load->view('home/home',['data' => $data]);
     }
 }
