@@ -68,7 +68,7 @@
           </div>
           <div class='col' style=' margin-top:4px;'>
             <small class='form-text text-muted'><?php echo $answer['full_name'];?></a></small>
-            <small class='form-text text-muted'>Dijawab <?php echo $answer['timestamp'];?></a></small>
+            <small class='form-text text-muted'>Dijawab <?php echo date("d M Y", strtotime($answer['timestamp']));?></a></small>
           </div>
         </div>
         <div class='row' style='margin-left:0px; margin-bottom:10px'>

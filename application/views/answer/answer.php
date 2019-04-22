@@ -7,17 +7,16 @@
           <div class='col'>
             <hr>
             <small class='form-text text-muted' style='color:grey; margin-left:10px;'>Pertanyaan ditambahkan</small>
-            <a href='#' style='color:black; margin-left:10px; font-size:20px;'><?php echo $question->question;?></a>
-            <small class='form-text text-muted' style='color:grey; margin-left:10px;'><?php echo $question->timestamp;?></small>
+            <div style='color:black; margin-left:10px; font-size:20px;'><strong><?php echo $question->question;?></strong></div>
+            <small class='form-text text-muted' style='color:grey; margin-left:10px;'>Ditambahkan <?php echo date("d M Y", strtotime($question->timestamp))    ;?></small>
             <small class='form-text text-muted'><a href='#' style='color:grey; margin-left:10px;' data-toggle='collapse' data-target='#demo'>Jawab</a></small>
           </div>
         </div>
         <div id='demo' class='collapse' style='margin-left:10px;'>
           <input type='hidden' name='question_id' value=<?php echo $question->question_id;?> required>
           <input type='hidden' name='user_id' value=<?php echo $_SESSION['user']['user_id'];?> required>
-          <label for='comment'>Comment:</label>
-          <textarea class='form-control' rows='5' id='comment' name='answer' required></textarea>
-          <button type='submit' class='btn btn-primary' name='button' style='margin-top:5px;'>Selesai</button>
+          <textarea class='form-control' rows='5' id='comment' name='answer' placeholder="Tulis Jawaban Anda"required></textarea>
+          <button type='submit' class='btn btn-primary' name='button' style='margin-top:5px;'>Kirim</button>
         </div>
         </form>
         <?php } ?>
