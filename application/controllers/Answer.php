@@ -16,7 +16,7 @@ Class Answer extends CI_Controller{
     }
 
     public function createAnswer() {
-        $answer = $this->Answer_Model->createAnswer();
+        $this->Answer_Model->createAnswer();
 
         redirect("answer");
     }

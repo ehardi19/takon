@@ -13,14 +13,13 @@ class Question_Model extends CI_Model {
     }
 
     // Create questtion
-    function createAnswer() {
+    function createQuestion() {
         $data = array(
-            'question_id'        => $this->input->post('question_id'),
-            'answer'        => $this->input->post('answer'),
-            'user_id'     => $this->input->post('id')
+            'question'        => $this->input->post('question'),
+            'user_id'     => $this->input->post('user_id')
         );
 
-        $this->db->insert('answer', $data);
+        $this->db->insert('question', $data);
     }
 
     // Edit question by question_id

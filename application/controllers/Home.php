@@ -18,4 +18,10 @@ Class Home extends CI_Controller{
         $this->load->view('home/header');
         $this->load->view('home/home',$data);
     }
+
+    public function createQuestion() {
+        $this->Question_Model->createQuestion();
+
+        redirect("answer");
+    }
 }
