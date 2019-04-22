@@ -7,9 +7,13 @@ Class Home extends CI_Controller{
         parent::__construct();
     }
 
+    public $answers = NULL;
+
     public function index() {
         $data['question'] = $this->Question_Model->getAllQuestion();
-        $data['answer'] = $this->Answer_Model->getAllAnswer();
+        $answer = $this->Answer_Model->getAllAnswer();
+        unset($_SESSION['answer']);
+        $_SESSION['answer'] = $answer;
 
         $this->load->view('home/header');
         $this->load->view('home/home',$data);

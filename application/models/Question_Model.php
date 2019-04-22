@@ -5,12 +5,11 @@ class Question_Model extends CI_Model {
     
     // Retrieve all questions
     function getAllQuestion(){
-        $this->db->select('*');
-        $this->db->from('question');
-        $this->db->order_by("timestamp", "DESC");
-        $query = $this->db->get();
+        $query = "SELECT question, question_id, user_id, timestamp, full_name FROM question NATURAL JOIN user ORDER BY timestamp DESC";
 
-        return $query->result();
+        $result = $this->db->query($query)->result();
+
+        return $result;
     }
 
     // Create questtion

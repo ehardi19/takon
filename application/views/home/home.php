@@ -71,22 +71,27 @@
           <div class="col"><hr></div>
         </div>
         <!-- ANSWER PART -->
-        <div class="row" style="margin-left:0px; margin-bottom:10px">
-          <div class="col-sm-1">
-            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="P" height="30" width="30" style="border-radius:50%; margin-top:10px;">
+        <?php foreach($_SESSION['answer'] as $answer) {
+          if ($answer['question_id'] == $question->question_id) {
+        ?>
+        <div class='row' style='margin-left:0px; margin-bottom:10px'>
+          <div class='col-sm-1'>
+            <img src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' alt=P' height='30' width='30' style='border-radius:50%; margin-top:10px;'>
           </div>
-          <div class="col" style=" margin-top:4px;">
-            <small class="form-text text-muted"><?php echo "user"?></a></small>
-            <small class="form-text text-muted"><?php echo "waktu"?></a></small>
+          <div class='col' style=' margin-top:4px;'>
+            <small class='form-text text-muted'><?php echo $answer['full_name'];?></a></small>
+            <small class='form-text text-muted'>Dijawab <?php echo $answer['timestamp'];?></a></small>
           </div>
         </div>
-        <div class="row" style="margin-left:0px; margin-bottom:10px">
-          <div class="col">Answer</div>
+        <div class='row' style='margin-left:0px; margin-bottom:10px'>
+          <div class='col'><?php echo $answer['answer'];?></div>
         </div>
+        <?php }?>
+        <?php }?>
         <!-- END OF ANSWER PART -->
       </div>
     </form>
-    <?php } ?>
+    <?php }?>
 
     <!-- END OF QUESTION SECTION -->
 

@@ -46,11 +46,31 @@ class User_Model extends CI_Model {
         }
     }
 
-    // Edit user by user_id
-    function editUser() {
+    // Edit phone of user
+    function editPhone() {
         $data = array(
-            'phone'        => $this->input->post('phone'),
-            'email'        => $this->input->post('email'),
+            'phone'        => $this->input->post('phone')
+        );
+        $user_id = $_POST['user_id'];
+
+        $this->db->where('user_id', $user_id);
+        $this->db->update('user', $data);
+    }
+    
+    // Edit email of user
+    function editEmail() {
+        $data = array(
+            'email'        => $this->input->post('email')
+        );
+        $user_id = $_POST['user_id'];
+
+        $this->db->where('user_id', $user_id);
+        $this->db->update('user', $data);
+    }
+
+    // Edit password of user
+    function editPassword() {
+        $data = array(
             'password'     => md5($this->input->post('password'))
         );
         $user_id = $_POST['user_id'];

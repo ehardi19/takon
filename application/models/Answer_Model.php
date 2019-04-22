@@ -5,23 +5,11 @@ class Answer_Model extends CI_Model {
     
     // Retrieve all answers
     function getAllAnswer(){
-        $this->db->select('*');
-        $this->db->from('answer');
-        $this->db->order_by("timestamp", "DESC");
-        $query = $this->db->get();
+        $query = "SELECT answer, answer_id, question_id, user_id, timestamp, full_name FROM answer NATURAL JOIN user ORDER BY timestamp DESC";
 
-        return $query->result();
-    }
+        $result = $this->db->query($query)->result_array();
 
-    // Retrieve all answers by question_id
-    function getAllAnswerByQuestionId($question_id){
-        $this->db->select('*');
-        $this->db->from('answer');
-        $this->db->where('name', $question_id);        
-        $this->db->order_by("timestamp", "DESC");
-        $query = $this->db->get();
-
-        return $query->result();
+        return $result;
     }
 
     // Create Answer
