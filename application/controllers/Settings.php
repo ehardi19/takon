@@ -13,9 +13,7 @@ Class Settings extends CI_Controller{
     }
 
     public function edit() {
-        $user = $this->User_Model->editUser();
-        if ($user != null) {
-            echo "Succcess";
-        }
+        $this->User_Model->editUser();
+        redirect('settings');
     }
 }

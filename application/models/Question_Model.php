@@ -12,4 +12,25 @@ class Question_Model extends CI_Model {
 
         return $query->result();
     }
+
+    // Create questtion
+    function createAnswer() {
+        $data = array(
+            'question_id'        => $this->input->post('question_id'),
+            'answer'        => $this->input->post('answer'),
+            'user_id'     => $this->input->post('id')
+        );
+
+        $this->db->insert('answer', $data);
+    }
+
+    // Edit question by question_id
+    function editQuestion() {
+        $data = array(
+            'question'        => $this->input->post('question'),
+        );
+        $question_id = $this->input->post('question_id');
+
+        $this->db->update('answer', $data, array('question_id' => $question_id));
+    }
 }

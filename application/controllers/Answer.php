@@ -18,8 +18,6 @@ Class Answer extends CI_Controller{
     public function createAnswer() {
         $answer = $this->Answer_Model->createAnswer();
 
-        if ($answer != null) {
-            redirect('home');
-        }
+        redirect("answer");
     }
 }

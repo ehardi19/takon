@@ -7,8 +7,8 @@
         </div>
         <div class="col-sm-6">
             <h1><?php echo $_SESSION['user']['full_name'];?></h1>
-            <small class="form-text text-muted"><a href="#" style="color:grey;">Add profile credential</a></small>
-            <small class="form-text text-muted"><a href="#" style="color:grey;">Write a description about yourself</a></small>
+            <small class="form-text text-muted"><?php echo $_SESSION['user']['email'];?></a></small>
+            <small class="form-text text-muted"><?php echo $_SESSION['user']['phone'];?></a></small>
         </div>
       </div>
 

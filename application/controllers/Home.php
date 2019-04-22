@@ -8,9 +8,10 @@ Class Home extends CI_Controller{
     }
 
     public function index() {
-        $data = $this->Question_Model->getAllQuestion();
+        $data['question'] = $this->Question_Model->getAllQuestion();
+        $data['answer'] = $this->Answer_Model->getAllAnswer();
 
         $this->load->view('home/header');
-        $this->load->view('home/home',['data' => $data]);
+        $this->load->view('home/home',$data);
     }
 }
