@@ -2,7 +2,7 @@
     <form class="Search">
       <div class="row">
         <div class="col">
-          <p style="color:grey; margin-left:328px; margin-top:40px;">Hasil untuk <span style="color:black"><b><?php echo $this->keyword;?></b></span></p>
+          <p style="color:grey; margin-left:328px; margin-top:40px;">Hasil untuk <?php echo $_SESSION['keyword'];?><span style="color:black"><b><?php echo $this->keyword;?></b></span></p>
         </div>
       </div>
 

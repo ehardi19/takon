@@ -10,8 +10,9 @@ Class Search extends CI_Controller{
     }
 
     public function index() {
-        $keyword = $this->input->post('keyword');
-        $data['result'] = $this->Question_Model->searchQuestion($keyword);
+        unset($_SESSION['keyword']);
+        $_SESSION['keyword'] = $this->input->post('keyword');
+        $data['result'] = $this->Question_Model->searchQuestion($_SESSION['keyword']);
 
         $this->load->view('search/header.php');
         $this->load->view('search/search.php', $data);
