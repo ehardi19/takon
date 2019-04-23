@@ -54,11 +54,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         background-color: none;
     }
     </style>
+
   </head>
-  
   <body>
-    <!-- NAVBAR -->
-    <nav id="navs" class="navbar navbar-expand-sm navbar-light" style="padding: .1rem 1rem; border-bottom:1px solid #cccccc;">
+
+  <!-- NAVBAR -->
+  <nav id="navs" class="navbar navbar-expand-sm navbar-light" style="padding: .1rem 1rem; border-bottom:1px solid #cccccc;">
       <div class="header_logo u-flex-none" style="margin-right:20px;">
         <a class="navbar-brand" href="<?php echo site_url('home');?>">
           <img src="https://2xawx0gmudy471po527lbxcd-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/quora-604x400.png" alt="logo" style="width:70px; height=70px;">
@@ -67,15 +68,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <ul id="list" class="navbar-nav">
         <li id="wan" class="nav-item" style="margin-right:20px;">
-          <a id="beranda" href="<?php echo site_url('home');?>" class="nav-link"">Beranda</a>
+          <a id="beranda" href="<?php echo site_url('home');?>" class="nav-link"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Apple_News_iOS_Icon.png" alt="" width="25px;"> Beranda</a>
         </li>
         <li id="cu" class="nav-item" style="margin-right:20px;">
-          <a href="<?php echo site_url('answer');?>" class="nav-link" style="border-bottom: 1px solid #b92b27; color:#b92b27;">Jawab</a>
+          <a href="<?php echo site_url('answer');?>" class="nav-link"><img src="https://images.vexels.com/media/users/3/140954/isolated/preview/92c8d4fffeec447a9106b65f8bbf0226-pen-paper-round-icon-by-vexels.png" alt="" width="30px;"> Jawab</a>
         </li>
       </ul>
 
       <form class="form-inline" action="<?php echo site_url('search'); ?>" method="POST" style="margin-right:20px;">
         <input class="form-control mr-sm-2" name="keyword" type="text" placeholder="Cari Quora" style="padding:1px; width:355px;">
+        <button class="btn btn-success" type="submit" style="padding:5px; background-color:white; border:none;"><img src="https://images.vexels.com/media/users/3/132068/isolated/preview/f9bb81e576c1a361c61a8c08945b2c48-search-icon-by-vexels.png" alt="" width="25px;"> </button>
       </form>
 
       <form class="form-inline" style="margin-right:15px;">

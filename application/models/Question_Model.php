@@ -12,6 +12,16 @@ class Question_Model extends CI_Model {
         return $result;
     }
 
+    // Retrieve all questions of given user_id
+    function getUserQuestion($user_id){
+        $query = "SELECT question, question_id, user_id, timestamp, full_name FROM question NATURAL JOIN user ORDER BY timestamp DESC";
+
+        $this->db->where('user_id', $user_id);
+        $result = $this->db->query($query)->result();
+
+        return $result;
+    }
+
     // Create questtion
     function createQuestion() {
         $data = array(

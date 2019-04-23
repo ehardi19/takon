@@ -8,7 +8,8 @@ Class Profile extends CI_Controller{
     }
 
     public function index() {
+        $data['user_question'] = $this->Question_Model->getAllQuestion();
         $this->load->view('profile/header');
-        $this->load->view('profile/profile');
+        $this->load->view('profile/profile', $data);
     }
 }

@@ -8,7 +8,7 @@
             <hr>
             <small class='form-text text-muted' style='color:grey; margin-left:10px;'>Pertanyaan ditambahkan</small>
             <div style='color:black; margin-left:10px; font-size:20px;'><strong><?php echo $question->question;?></strong></div>
-            <small class='form-text text-muted' style='color:grey; margin-left:10px;'>Ditambahkan <?php echo date("d M Y", strtotime($question->timestamp))    ;?></small>
+            <small class='form-text text-muted' style='color:grey; margin-left:10px;'>Ditambahkan <?php echo date("d M Y", strtotime($question->timestamp));?></small>
             <small class='form-text text-muted'><a href='#' style='color:grey; margin-left:10px;' data-toggle='collapse' data-target='#demo'>Jawab</a></small>
           </div>
         </div>
