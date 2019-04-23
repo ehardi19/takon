@@ -1,4 +1,3 @@
-<!-- style="border-bottom: 1px solid #b92b27; color:#b92b27;" -->
     <!-- CONTENT -->
     <div id="main">
       <div class="container" style="border-radius:2px; margin-top:30px;">
@@ -23,7 +22,7 @@
           <div class="row">
             <div class="col">
               <input type='hidden' name='user_id' value=<?php echo $_SESSION['user']['user_id'];?> required>
-              <input id="navs11" class="form-control" type="text" name="question" placeholder="Awali pertanyaan Anda dengan &quot;Apa&quot;, &quot;Bagaimana&quot;, &quot;Mengapa&quot;, dll." style="border:none; width: 100%;" required>
+              <textarea id="navs11" class="form-control" type="text" name="question" placeholder="Awali pertanyaan Anda dengan &quot;Apa&quot;, &quot;Bagaimana&quot;, &quot;Mengapa&quot;, dll." style="border:none; width: 100%;" required></textarea>
             </div>
           </div>
 

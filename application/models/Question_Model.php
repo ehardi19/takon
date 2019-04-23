@@ -31,4 +31,12 @@ class Question_Model extends CI_Model {
 
         $this->db->update('answer', $data, array('question_id' => $question_id));
     }
+
+    // Search a question by keyword
+    function searchQuestion($keyword) {
+        $this->db->like('question',$keyword);
+        $query  =   $this->db->get('question');
+        
+        return $query->result_array();
+    }
 }

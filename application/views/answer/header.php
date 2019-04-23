@@ -75,8 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </ul>
 
       <form class="form-inline" action="<?php echo site_url('search'); ?>" style="margin-right:20px;">
-        <input class="form-control mr-sm-2" type="text" placeholder=" Cari Quora" style="padding:1px; width:355px;">
-        <!--<button class="btn btn-success" type="submit">Search</button>-->
+        <input class="form-control mr-sm-2" name="keyword" type="text" placeholder="Cari Quora" style="padding:1px; width:355px;">
       </form>
 
       <form class="form-inline" style="margin-right:15px;">

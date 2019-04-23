@@ -5,7 +5,7 @@ class Answer_Model extends CI_Model {
     
     // Retrieve all answers
     function getAllAnswer(){
-        $query = "SELECT answer, answer_id, question_id, user_id, timestamp, full_name FROM answer NATURAL JOIN user ORDER BY timestamp DESC";
+        $query = "SELECT answer, answer_id, question_id, user_id, timestamp, full_name FROM answer NATURAL JOIN user";
 
         $result = $this->db->query($query)->result_array();
 
